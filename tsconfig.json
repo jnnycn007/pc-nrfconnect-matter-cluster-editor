@@ -1,0 +1,12 @@
+{
+    "extends": "@nordicsemiconductor/pc-nrfconnect-shared/config/tsconfig.json",
+    "ts-node": {
+        "skipIgnore": true
+    },
+    "compilerOptions": {
+        "jsx": "react",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "moduleResolution": "node"
+    }
+}

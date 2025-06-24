@@ -1,0 +1,46 @@
+{
+    "name": "pc-nrfconnect-matter-manufacturer-cluster-editor",
+    "version": "0.1.0",
+    "description": "An application for creating and modifying Matter Manufacturer-specific Clusters and Cluster Extensions.",
+    "displayName": "nRF Connect Matter Manufacturer Cluster Editor",
+    "author": "Nordic Semiconductor ASA",
+    "license": "SEE LICENSE IN LICENSE",
+    "homepage": "https://github.com/NordicSemiconductor/pc-nrfconnect-matter-manufacturer-cluster-editor",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/NordicSemiconductor/pc-nrfconnect-matter-manufacturer-cluster-editor.git"
+    },
+    "engines": {
+        "nrfconnect": ">=4.3.0"
+    },
+    "nrfConnectForDesktop": {
+        "html": "dist/index.html"
+    },
+    "main": "dist/bundle.js",
+    "files": [
+        "dist/",
+        "LICENSE",
+        "resources/*",
+        "resources/icon.*",
+        "icon.png",
+        "Changelog.md"
+    ],
+    "scripts": {
+        "watch": "run-p --silent --continue-on-error watch:*",
+        "watch:build": "run-esbuild --watch",
+        "watch:types": "tsc --noEmit --pretty --watch --preserveWatchOutput",
+        "build:dev": "run-esbuild",
+        "build:prod": "run-esbuild --prod",
+        "test": "jest --passWithNoTests",
+        "check": "run-p --silent --continue-on-error --print-label check:*",
+        "check:app": "check-app-properties",
+        "check:lint": "eslint --fix --color .",
+        "check:types": "check-for-typescript tsc --noEmit --pretty",
+        "check:license": "nrfconnect-license check",
+        "nordic-publish": "node ./dist/nordic-publish.js",
+        "prepare": "husky install"
+    },
+    "devDependencies": {},
+    "prettier": "@nordicsemiconductor/pc-nrfconnect-shared/config/prettier.config.js",
+    "dependencies": {}
+}
