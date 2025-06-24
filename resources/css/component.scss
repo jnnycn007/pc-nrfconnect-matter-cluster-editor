@@ -1,0 +1,62 @@
+/*
+ * Copyright (c) 2025 Nordic Semiconductor ASA
+ *
+ * SPDX-License-Identifier: LicenseRef-Nordic-4-Clause
+ */
+
+.innerListItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.innerDeleteButton {
+    display: 'flex';
+    justify-content: 'center';
+    width: '100%';
+}
+
+.booleanFieldsGrid {
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.TableDescription {
+    padding-left: 15px;
+    padding-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Dropdown styles */
+.largeDropdown {
+    font-size: 16px !important;
+
+    /* Style the dropdown button */
+    button {
+        font-size: 16px !important;
+    }
+
+    /* Style the dropdown menu items */
+    .MuiMenuItem-root {
+        font-size: 16px !important;
+    }
+
+    /* Style the select component when using Material-UI */
+    .MuiSelect-select {
+        font-size: 16px !important;
+    }
+
+    /* Style the label */
+    .MuiInputLabel-root {
+        font-size: 16px !important;
+    }
+}

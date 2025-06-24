@@ -21,8 +21,6 @@
         "dist/",
         "LICENSE",
         "resources/*",
-        "resources/icon.*",
-        "icon.png",
         "Changelog.md"
     ],
     "scripts": {
@@ -40,7 +38,27 @@
         "nordic-publish": "node ./dist/nordic-publish.js",
         "prepare": "husky install"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.0",
+        "@mui/icons-material": "6.4.3",
+        "@mui/material": "6.4.3",
+        "@nordicsemiconductor/pc-nrfconnect-shared": "^204.0.0",
+        "@testing-library/jest-dom": "^6.6.3",
+        "@testing-library/react": "^16.2.0",
+        "@testing-library/user-event": "^14.6.1",
+        "@types/react": "18.2.0",
+        "@types/react-dom": "18.2.0",
+        "@types/react-test-renderer": "18.0.0",
+        "@types/xml2js": "^0.4.7",
+        "axios": "^1.8.4",
+        "xml2js": "^0.6.2"
+    },
     "prettier": "@nordicsemiconductor/pc-nrfconnect-shared/config/prettier.config.js",
-    "dependencies": {}
+    "dependencies": {
+        "audit": "^0.0.6",
+        "fix": "^0.0.6",
+        "fast-xml-parser": "^5.0.9",
+        "node-watch": "^0.7.3"
+    }
 }
