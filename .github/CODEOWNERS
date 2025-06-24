@@ -1,0 +1,18 @@
+# CODEOWNERS for autoreview assigning in github
+
+# https://help.github.com/en/articles/about-code-owners#codeowners-syntax
+# Order is important; the last matching pattern takes the most
+# precedence.
+
+# The default entry with `*` only applies to GitHub adding reviewers.
+# The compliance workflow verifies that all new files are covered by an
+# entry in the CODEOWNERS file, but skips this `*` entry altogether.
+*                @NordicSemiconductor/matter
+
+# Root folder
+/.*				 @NordicSemiconductor/matter
+/tests/          @NordicSemiconductor/matter
+/src/            @NordicSemiconductor/matter
+/resources/      @NordicSemiconductor/matter
+/.github/        @NordicSemiconductor/matter
+/.husky/         @NordicSemiconductor/matter 
