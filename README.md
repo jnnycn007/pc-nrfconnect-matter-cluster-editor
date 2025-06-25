@@ -1,4 +1,4 @@
-# nRF Connect Matter Manufacturer Cluster Editor
+# Matter Cluster Editor
 
 The Matter data model defines clusters that are common for all manufacturers and
 can be used as a base for devices. Sometimes, it is necessary to create a new
