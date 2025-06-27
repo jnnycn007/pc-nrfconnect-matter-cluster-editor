@@ -7,6 +7,7 @@ on:
                 description: 'Source to release to'
                 type: choice
                 options:
+                    - latest (internal)
                     - release-test (internal)
                     - test (internal)
                     - official (external)

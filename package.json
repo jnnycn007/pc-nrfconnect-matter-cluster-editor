@@ -52,7 +52,8 @@
         "@types/react-test-renderer": "18.0.0",
         "@types/xml2js": "^0.4.7",
         "axios": "^1.8.4",
-        "xml2js": "^0.6.2"
+        "xml2js": "^0.6.2",
+        "fast-xml-parser": "^5.0.9"
     },
     "prettier": "@nordicsemiconductor/pc-nrfconnect-shared/config/prettier.config.js",
     "dependencies": {
