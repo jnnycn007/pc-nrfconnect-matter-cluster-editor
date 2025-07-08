@@ -57,9 +57,6 @@
     },
     "prettier": "@nordicsemiconductor/pc-nrfconnect-shared/config/prettier.config.js",
     "dependencies": {
-        "audit": "^0.0.6",
-        "fix": "^0.0.6",
-        "fast-xml-parser": "^5.0.9",
         "node-watch": "^0.7.3"
     }
 }
