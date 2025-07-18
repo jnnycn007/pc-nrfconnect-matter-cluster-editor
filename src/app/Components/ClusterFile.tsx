@@ -669,12 +669,14 @@ class ClusterFile {
 
         const xmlFile: XMLFile = {
             cluster: clusterDiff as XMLCluster[],
-            deviceType: newDeviceType as XMLDeviceType,
             enum: newEnums,
             struct: newStructs,
         };
 
-        console.log(JSON.stringify(xmlFile));
+        // Only include deviceType in the XML file if it's not null
+        if (newDeviceType !== "") {
+            xmlFile.deviceType = newDeviceType as XMLDeviceType;
+        }
 
         return serializeClusterXML(xmlFile);
     }
