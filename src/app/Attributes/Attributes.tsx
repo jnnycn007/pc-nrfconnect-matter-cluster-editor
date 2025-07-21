@@ -46,6 +46,10 @@ const AttributesTable: React.FC<{ active: boolean }> = () => {
         // If there is only one Attribute, it is not an array so we need to make it an array
         // We must ensure that each potential array in the cluster has an array type and be
         // ready for using the map function, even if it is actually empty.
+        if (!ClusterFile.XMLCurrentInstance.cluster) {
+            return [];
+        }
+
         if (
             ClusterFile.XMLCurrentInstance.cluster.attribute &&
             !Array.isArray(ClusterFile.XMLCurrentInstance.cluster.attribute)

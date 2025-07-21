@@ -103,6 +103,9 @@ class ClusterFile {
      */
     static async isMultipleCluster(content: string) {
         const result = (await parseClusterXML(content)) as XMLFile;
+        if (!result.cluster) {
+            return false;
+        }
         return result.cluster.length > 1;
     }
 
@@ -159,7 +162,7 @@ class ClusterFile {
             this.loadedClusterExtension = false;
             return (
                 Array.isArray(this.file.cluster) ||
-                this.file.cluster !== undefined
+                this.file.cluster !== undefined || this.file.deviceType !== undefined
             );
         } catch (error) {
             logger.error('Error parsing XML:', error);
@@ -311,14 +314,29 @@ class ClusterFile {
             );
         }, 100);
 
-        // TODO: This is workaround, as HexStrings are not correctly initialized in XMLCurrentInstance.
-        // This should be fixed in the future.
+        // Convert HexString to XMLDeviceTypeIds structure if needed
         if (this.XMLCurrentInstance.deviceType?.deviceId) {
-            this.XMLCurrentInstance.deviceType.deviceId._ = new HexString(0x0);
+            // Check if deviceId is a HexString and convert it to XMLDeviceTypeIds structure
+            if (this.XMLCurrentInstance.deviceType.deviceId instanceof HexString) {
+                this.XMLCurrentInstance.deviceType.deviceId = {
+                    $: {
+                        editable: false,
+                    },
+                    _: this.XMLCurrentInstance.deviceType.deviceId,
+                };
+            }
         }
 
         if (this.XMLCurrentInstance.deviceType?.profileId) {
-            this.XMLCurrentInstance.deviceType.profileId._ = new HexString(0x0);
+            // Check if profileId is a HexString and convert it to XMLDeviceTypeIds structure
+            if (this.XMLCurrentInstance.deviceType.profileId instanceof HexString) {
+                this.XMLCurrentInstance.deviceType.profileId = {
+                    $: {
+                        editable: false,
+                    },
+                    _: this.XMLCurrentInstance.deviceType.profileId,
+                };
+            }
         }
     }
 
@@ -602,13 +620,13 @@ class ClusterFile {
                 JSON.stringify(this.XMLCurrentInstance.deviceType) ===
                     JSON.stringify(this.XMLDefaultInstance.deviceType)
             ) {
-                return '';
+                return "";
             }
             if (
                 JSON.stringify(this.XMLCurrentInstance.deviceType) ===
                 JSON.stringify(this.XMLBaseInstance.deviceType)
             ) {
-                return '';
+                return "";
             }
         }
 
@@ -633,9 +651,9 @@ class ClusterFile {
             newAttributes?.length === 0 &&
             newCommands?.length === 0 &&
             newEvents?.length === 0 &&
-            newDeviceType === ''
+            newDeviceType === null
         ) {
-            return '';
+            return "";
         }
 
         const clusterExtensionInstance: XMLExtensionConfigurator = {
@@ -688,7 +706,7 @@ class ClusterFile {
         };
 
         // Only include deviceType in the XML file if it's not null
-        if (newDeviceType !== "") {
+        if (newDeviceType !== null) {
             xmlFile.deviceType = newDeviceType as XMLDeviceType;
         }
 

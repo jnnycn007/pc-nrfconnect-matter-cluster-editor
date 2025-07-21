@@ -15,6 +15,7 @@ import {
     XMLConfigurator,
     XMLDeviceClusterFeatures,
     XMLDeviceClusterInclude,
+    XMLDeviceClusters,
     XMLDeviceType,
     XMLEnum,
     XMLEnumItem,
@@ -161,6 +162,13 @@ export const defaultXMLCluster: XMLCluster = {
     attribute: [],
     command: [],
     event: [],
+};
+
+export const defaultXMLDeviceClusters: XMLDeviceClusters = {
+    $: {
+        lockOthers: false,
+    },
+    include: [],
 };
 
 export const defaultXMLDeviceType: XMLDeviceType = {

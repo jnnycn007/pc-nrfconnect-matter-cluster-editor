@@ -51,6 +51,9 @@ const ClusterPage: React.FC = () => {
 
     React.useEffect(() => {
         const loadClusterData = () => {
+            if (!ClusterFile.XMLCurrentInstance.cluster) {
+                return;
+            }
             if (ClusterFile.XMLCurrentInstance.cluster) {
                 setLocalCluster(ClusterFile.XMLCurrentInstance.cluster);
             }

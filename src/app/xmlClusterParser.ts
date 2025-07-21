@@ -21,7 +21,7 @@ function parseNumbersAndHex(hexString: string): HexString | number | string | nu
     if (hexString === '') {
         return null;
     }
-    
+
     if (
         String(hexString).startsWith('0x') ||
         String(hexString).startsWith('0X')

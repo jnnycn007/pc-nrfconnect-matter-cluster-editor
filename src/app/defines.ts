@@ -75,22 +75,19 @@ export class HexString {
     }
 }
 
+export interface XMLDeviceTypeIds {
+    $: {
+        editable: boolean;
+    };
+    _: HexString;
+}
+
 export interface XMLDeviceType {
     name: string;
     domain: string;
     typeName: string;
-    profileId: {
-        $: {
-            editable: boolean;
-        };
-        _: HexString;
-    };
-    deviceId: {
-        $: {
-            editable: boolean;
-        };
-        _: HexString;
-    };
+    profileId: XMLDeviceTypeIds;
+    deviceId: XMLDeviceTypeIds;
     class: string;
     scope: string;
     clusters: XMLDeviceClusters;

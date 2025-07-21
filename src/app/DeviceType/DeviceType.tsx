@@ -14,9 +14,10 @@ import eventEmitter from '../Components/EventEmitter';
 import PageCard from '../Components/PageCard';
 import {
     defaultXMLDeviceClusterInclude,
+    defaultXMLDeviceClusters,
     defaultXMLDeviceType,
 } from '../defaults';
-import { HexString, XMLDeviceClusterInclude, XMLDeviceType } from '../defines';
+import { HexString, XMLDeviceClusterInclude, XMLDeviceType, XMLDeviceTypeIds } from '../defines';
 import {
     matterDeviceTypeClasses,
     matterDeviceTypeScopes,
@@ -63,6 +64,10 @@ const DeviceType: React.FC = () => {
     React.useEffect(() => {
         const loadDeviceTypeData = () => {
             if (ClusterFile.XMLCurrentInstance.deviceType) {
+                if (!ClusterFile.XMLCurrentInstance.deviceType.clusters) {
+                    ClusterFile.XMLCurrentInstance.deviceType.clusters =
+                        defaultXMLDeviceClusters;
+                }
                 setLocalDeviceType(ClusterFile.XMLCurrentInstance.deviceType);
             }
         };
@@ -194,7 +199,7 @@ const DeviceType: React.FC = () => {
                 <InputAndBoolField
                     field="Profile ID"
                     stringValue={localDeviceType.profileId._}
-                    boolValue={localDeviceType.profileId.$.editable}
+                    boolValue={localDeviceType.profileId.$.editable || false}
                     boolLabel="Editable"
                     tooltip={handleFieldTooltip('profileId')}
                     useNrfconnect
@@ -221,7 +226,7 @@ const DeviceType: React.FC = () => {
                 <InputAndBoolField
                     field="Device ID"
                     stringValue={localDeviceType.deviceId._}
-                    boolValue={localDeviceType.deviceId.$.editable}
+                    boolValue={localDeviceType.deviceId.$.editable || false}
                     boolLabel="Editable"
                     tooltip={handleFieldTooltip('deviceId')}
                     useNrfconnect

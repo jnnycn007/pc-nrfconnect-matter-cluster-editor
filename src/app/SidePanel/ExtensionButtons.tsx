@@ -69,6 +69,12 @@ const ExtensionButtons = () => {
             return;
         }
 
+        if(raw === null){
+            extensionWarningTextSet('No new attributes, commands, or events compared to the original cluster. Extension cannot be created.');
+            extensionWarningOpenSet(true);
+            return;
+        }
+
         const blob = new Blob([raw], { type: 'text/xml' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
