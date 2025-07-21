@@ -389,7 +389,7 @@ describe('ClusterFile', () => {
         it('should return new attributes added to XMLCurrentInstance', () => {
             const newAttrs = ClusterFile.getNewAttributes();
             expect(newAttrs).toHaveLength(1);
-            expect(newAttrs[0]).toEqual({
+            expect(newAttrs![0]).toEqual({
                 $: { name: 'NewAttr1', code: expect.any(HexString) },
             });
         });
@@ -397,10 +397,10 @@ describe('ClusterFile', () => {
         it('should return new commands added to XMLCurrentInstance', () => {
             const newCmds = ClusterFile.getNewCommands();
             expect(newCmds).toHaveLength(2);
-            expect(newCmds[0]).toEqual({
+            expect(newCmds![0]).toEqual({
                 $: { name: 'NewCmd1', code: expect.any(HexString) },
             });
-            expect(newCmds[1]).toEqual({
+            expect(newCmds![1]).toEqual({
                 $: { name: 'NewCmd2', code: expect.any(HexString) },
             });
         });
@@ -408,7 +408,7 @@ describe('ClusterFile', () => {
         it('should return new events added to XMLCurrentInstance', () => {
             const newEvents = ClusterFile.getNewEvents();
             expect(newEvents).toHaveLength(1);
-            expect(newEvents[0]).toEqual({
+            expect(newEvents![0]).toEqual({
                 $: { name: 'NewEvent1', code: expect.any(HexString) },
             });
         });

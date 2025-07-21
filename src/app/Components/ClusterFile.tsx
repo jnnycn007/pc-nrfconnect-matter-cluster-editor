@@ -351,6 +351,10 @@ class ClusterFile {
             }
         }
 
+        if(compareToDefault){
+            return this.XMLCurrentInstance.cluster.attribute;
+        }
+
         // The base cluster has attributes
         if (
             this.XMLCurrentInstance.cluster.attribute &&
@@ -412,6 +416,11 @@ class ClusterFile {
                 diffCommands.push(this.XMLCurrentInstance.cluster.command[i]);
             }
         }
+
+        if(compareToDefault){
+            return this.XMLCurrentInstance.cluster.command;
+        }
+
         // The base cluster has commands
         if (
             this.XMLCurrentInstance.cluster.command &&
@@ -428,6 +437,7 @@ class ClusterFile {
                 );
             }
         }
+
         // The base cluster has no commands
         if (
             this.XMLCurrentInstance.cluster.command &&
@@ -470,6 +480,10 @@ class ClusterFile {
             ) {
                 diffEvents.push(this.XMLCurrentInstance.cluster.event[i]);
             }
+        }
+
+        if(compareToDefault){
+            return this.XMLCurrentInstance.cluster.event;
         }
 
         // The base cluster has events
@@ -616,9 +630,9 @@ class ClusterFile {
         const newDeviceType = this.getNewDeviceType();
 
         if (
-            newAttributes.length === 0 &&
-            newCommands.length === 0 &&
-            newEvents.length === 0 &&
+            newAttributes?.length === 0 &&
+            newCommands?.length === 0 &&
+            newEvents?.length === 0 &&
             newDeviceType === ''
         ) {
             return '';
