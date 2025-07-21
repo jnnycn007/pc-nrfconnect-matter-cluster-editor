@@ -16,7 +16,12 @@ import { HexString, XMLExtensionConfigurator, XMLFile } from './defines';
  * configurator.
  */
 
-function parseNumbersAndHex(hexString: string): HexString | number {
+function parseNumbersAndHex(hexString: string): HexString | number | string | null{
+    // Handle empty strings - return them as null to avoid NaN conversion
+    if (hexString === '') {
+        return null;
+    }
+    
     if (
         String(hexString).startsWith('0x') ||
         String(hexString).startsWith('0X')
@@ -49,7 +54,11 @@ export async function parseClusterXML(
 }
 
 const convertHexStrings = (obj: any): any => {
-    if (!obj) return obj;
+    if (!obj) return null;
+
+    if(obj === ''){
+        return null;
+    }
 
     if (obj instanceof HexString) {
         return obj.toString();
