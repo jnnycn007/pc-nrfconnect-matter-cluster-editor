@@ -108,7 +108,7 @@ const EnumEdit: React.FC<EditRowWrapper<XMLEnum>> = ({
     const handleItemTooltip = (field: string) => {
         const tooltips: { [key: string]: string } = {
             name: 'The name of the item. It shall be unique within the enum.',
-            field: 'The value assigned to the item, which must match the specified data type of the enumerated type.',
+            value: 'The value assigned to the item, which must match the specified data type of the enumerated type.',
         };
         return tooltips[field] || '';
     };

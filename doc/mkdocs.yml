@@ -1,4 +1,4 @@
-site_name: Matter Manufacturer Cluster Editor app documentation
+site_name: Matter Cluster Editor app documentation
 site_url:
 use_directory_urls: false
 
@@ -53,7 +53,15 @@ plugins:
 
 extra:
   test: This is a test abbreviation snippet
-  app_name: Matter Manufacturer Cluster Editor app
+  app_name: Matter Cluster Editor app
+  NCS: nRF Connect SDK
+  matter_requirements: To take full advantage of this guide, you need to be familiar with the [Matter architecture](https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/protocols/matter/overview/architecture.html) and the [Matter Device Type Library specification](https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/protocols/matter/overview/data_model.html).
 
 nav:
   - Home: index.md
+  - Installing the Matter Cluster Editor app: installing.md
+  - Overview and user interface: overview.md
+  - Creating a new Matter cluster: creating_new_cluster.md
+  - Creating a cluster extension: creating_cluster_extension.md
+  - Creating a new device type: creating_device_type.md
+  - Revision history: revision_history.md
