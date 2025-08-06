@@ -44,7 +44,7 @@ If there is no difference, the tool shows a notification indicating that there i
 
 This is the blue area at the top of the side panel sections. When you load a Matter cluster XML file, the name of the cluster is displayed here (for example, `NordicDevKit` in the following image.)
 
-![Filled cluster name field above the side panels](./screenshots/matter_cluster_tool_name_field.png "Filled cluster name field above the side panels")
+![Filled cluster name field above the side panels](./screenshots/matter_cluster_tool_name.png "Filled cluster name field above the side panels")
 
 !!! info "Tip"
     You can change the name of the cluster by clicking on the name bar and typing a new name. The new name must be unique across all available clusters in the Matter Data Model.
@@ -82,13 +82,13 @@ The following tabs are available:
 
 This tab contains input fields for information about the cluster.
 
-|   Input field   |                                               Description                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------- |
-| **Domain**      | A combined text input and drop-down field for selecting from predefined domains. This field is required. |
-| **Name**        | A text input field for the cluster name. This field is required.                                         |
-| **Code**        | A text input field with default value "0x0000". This field is required.                                  |
-| **Define**      | A text input field for the cluster definition. This field is required.                                   |
-| **Description** | A text input area for an optional cluster description.                                                  |
+|   Input field   |                                               Description                                                | Required |
+| --------------- | -------------------------------------------------------------------------------------------------------- | -------- |
+| **Domain**      | A combined text input and drop-down field for selecting from predefined domains. | Yes      |
+| **Name**        | A text input field for the cluster name.                                         | Yes      |
+| **Code**        | A text input field with default value "0x0000".                                  | Yes      |
+| **Define**      | A text input field for the cluster definition.                                   | Yes      |
+| **Description** | A text input area for an optional cluster description.                                                   | No       |
 
 ### Commands tab
 
@@ -113,17 +113,17 @@ When you click the **Add Command** button, the edit box dialog appears.
 
 ![Command edit window](./screenshots/matter_cluster_tool_command_dialog.png "Command edit window")
 
-|   UI element   |                                               Description                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------- |
-| **Name**      | A text input field for the command name. This field is required.                                         |
-| **Code**      | A text input field for the command code. This field is required.                                         |
-| **Source**  | Source of the command, either ``server`` or ``client``. This field is required. |
-| **Response**  | Name of the command that is a response to the current command. Leave empty if no response is required.  |
-| **Optional**  | Toggle button to define the command as mandatory (toggle disabled) or optional (toggle enabled).  |
-| **Disable Default Response**  | Toggle button to disable the default response (toggle enabled) or have it enabled (toggle disabled). The setting is not taken into account if the **Response** field is empty.  |
-| **Description** | A text input area for an optional command description.                                                   |
-| **Arguments** | Add a new argument to the command. |
-| **Accesses** | Add a new access privilege to the command. |
+|   UI element   |                                               Description                                                | Required |
+| --------------- | -------------------------------------------------------------------------------------------------------- | -------- |
+| **Name**      | A text input field for the command name.                                         | Yes      |
+| **Code**      | A text input field for the command code.                                         | Yes      |
+| **Source**  | Source of the command, either ``server`` or ``client``. | Yes      |
+| **Response**  | Name of the command that is a response to the current command. Leave empty if no response is required.  | No       |
+| **Optional**  | Toggle button to define the command as mandatory (toggle disabled) or optional (toggle enabled).  | No       |
+| **Disable Default Response**  | Toggle button to disable the default response (toggle enabled) or have it enabled (toggle disabled). The setting is not taken into account if the **Response** field is empty.  | No       |
+| **Description** | A text input area for an optional command description.                                                   | No       |
+| **Arguments** | Add a new argument to the command. | No       |
+| **Accesses** | Add a new access privilege to the command. | No       |
 
 ##### Arguments
 
@@ -134,13 +134,13 @@ When you click this button, the arguments window appears, where you can click th
 
 You can edit the following fields of the argument entry.
 
-|   UI element   |                                               Description                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------- |
-| **Name**      | A text input field for the command name. The name must be unique within the command. This field is required.                                         |
-| **Type**      | A combined text input and drop-down field for selecting the data type of the argument. The data type list is populated from the Matter Data Model template. This field is required.                                         |
-| **Is Nullable**  | Toggle button to define whether the argument can be null (toggle enabled) or not (toggle disabled). |
-| **Optional**  | Toggle button to define the argument as mandatory (toggle disabled) or optional (toggle enabled).  |
-| **Delete** (bin icon)   | Delete the argument from the list.  |
+|   UI element   |                                               Description                                                | Required |
+| --------------- | -------------------------------------------------------------------------------------------------------- | -------- |
+| **Name**      | A text input field for the command name. The name must be unique within the command.                                         | Yes      |
+| **Type**      | A combined text input and drop-down field for selecting the data type of the argument. The data type list is populated from the Matter Data Model template.                                         | Yes      |
+| **Is Nullable**  | Toggle button to define whether the argument can be null (toggle enabled) or not (toggle disabled). | No       |
+| **Optional**  | Toggle button to define the argument as mandatory (toggle disabled) or optional (toggle enabled).  | No       |
+| **Delete** (bin icon)   | Delete the argument from the list.  | No       |
 
 ##### Accesses
 
@@ -151,11 +151,11 @@ When you click this button, the access privileges window appears, where you can 
 
 You can edit the following fields of the access privilege entry.
 
-|   UI element   |                                               Description                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------- |
-| **Op**      | A drop-down menu for selecting the operation type: `read`, `write`, or `invoke`. This field is required.                                         |
-| **Role**      | A drop-down menu for selecing the role related to the operation type: `none`, `view`, `operate`, `manage`, `administer`. This field is required.                                         |
-| **Delete** (bin icon)   | Delete the access privilege from the list.  |
+|   UI element   |                                               Description                                                | Required |
+| --------------- | -------------------------------------------------------------------------------------------------------- | -------- |
+| **Op**      | A drop-down menu for selecting the operation type: `read`, `write`, or `invoke`.                                         | Yes      |
+| **Role**      | A drop-down menu for selecing the role related to the operation type: `none`, `view`, `operate`, `manage`, `administer`.                                         | Yes      |
+| **Delete** (bin icon)   | Delete the access privilege from the list.  | No       |
 
 ### Attributes tab
 
@@ -181,23 +181,23 @@ When you click this button, the edit box dialog appears.
 
 ![Attributes edit window](./screenshots/matter_cluster_tool_attributes_edit_window.png "Attributes edit window")
 
-|   UI element   |                                               Description                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------- |
-| **Name**      | A text input field for the attribute name. This field is required.                                       |
-| **Side**      | A drop-down menu for selecting `server` or `client`. This field is required.                       |
-| **Code**      | A text input field for the attribute code. This field is required.                                       |
-| **Define**    | A text input field for the attribute definition. This field is required.                                 |
-| **Type**      | A combined text input and drop-down field for selecting the data type. This field is required.                              |
-| **Length**      | A text input field for the attribute. length.                                                            |
-| **Min**         | A text input field for the minimum value of the attribtute. Only valid for the numeric data types. value.                                                               |
-| **Max**         | A text input field for the maximum value of the attribtute. Must be higher than **Min**. Only valid for the numeric data types.                                                               |
-| **Default**     | A text input field for the default value of the attribute. Must be the same as **Type**. value.                                                               |
-| **Api Maturity**| A drop-down menu for selecting the API maturity level: `provisional`, `internal`, `stable`, or `deprecated`. Arguments with no level selected are considered to be `stable`.                                                      |
-| **Writable**    | Toggle button to define the attribute as writable (toggle enabled) or read-only (toggle disabled).       |
-| **Reportable**  | Toggle button to define the attribute as reportable (toggle enabled) or not reportable (toggle disabled). |
-| **Is Nullable** | Toggle button to define whether the attribute can be null (toggle enabled) or not (toggle disabled).     |
-| **Optional**    | Toggle button to define the attribute as mandatory (toggle disabled) or optional (toggle enabled).       |
-| **Accesses**    | Add a new access privilege to the attribute.                                                            |
+|   UI element   |                                               Description                                                | Required |
+| --------------- | -------------------------------------------------------------------------------------------------------- | -------- |
+| **Name**      | A text input field for the attribute name.                                       | Yes      |
+| **Side**      | A drop-down menu for selecting `server` or `client`.                       | Yes      |
+| **Code**      | A text input field for the attribute code.                                       | Yes      |
+| **Define**    | A text input field for the attribute definition.                                 | Yes      |
+| **Type**      | A combined text input and drop-down field for selecting the data type.                              | Yes      |
+| **Length**      | A text input field for the attribute. length.                                                            | No       |
+| **Min**         | A text input field for the minimum value of the attribute. Only valid for the numeric data types.                                                               | No       |
+| **Max**         | A text input field for the maximum value of the attribute. Must be higher than **Min**. Only valid for the numeric data types.                                                               | No       |
+| **Default**     | A text input field for the default value of the attribute. Must be the same as **Type**. | No       |
+| **Api Maturity**| A drop-down menu for selecting the API maturity level: `provisional`, `internal`, `stable`, or `deprecated`. Arguments with no level selected are considered to be `stable`.                                                      | No       |
+| **Writable**    | Toggle button to define the attribute as writable (toggle enabled) or read-only (toggle disabled).       | No       |
+| **Reportable**  | Toggle button to define the attribute as reportable (toggle enabled) or not reportable (toggle disabled). | No       |
+| **Is Nullable** | Toggle button to define whether the attribute can be null (toggle enabled) or not (toggle disabled).     | No       |
+| **Optional**    | Toggle button to define the attribute as mandatory (toggle disabled) or optional (toggle enabled).       | No       |
+| **Accesses**    | Add a new access privilege to the attribute.                                                            | No       |
 
 ##### Accesses
 
@@ -208,11 +208,11 @@ When you click this button, the access privileges window appears, where you can 
 
 You can edit the following fields of the access privilege entry.
 
-|   UI element    |                                               Description                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------- |
-| **Op**          | A drop-down menu for selecting the operation type: `read`, `write`, or `invoke`. This field is required. |
-| **Role**        | A drop-down menu for selecing the role related to the operation type: `none`, `view`, `operate`, `manage`, `administer`. This field is required. |
-| **Delete** (bin icon)   | Delete the access privilege from the list.  |
+|   UI element    |                                               Description                                                | Required |
+| --------------- | -------------------------------------------------------------------------------------------------------- | -------- |
+| **Op**          | A drop-down menu for selecting the operation type: `read`, `write`, or `invoke`. | Yes      |
+| **Role**        | A drop-down menu for selecing the role related to the operation type: `none`, `view`, `operate`, `manage`, `administer`. | Yes      |
+| **Delete** (bin icon)   | Delete the access privilege from the list.  | No       |
 
 ### Events tab
 
@@ -236,15 +236,15 @@ When you click this button, the edit box dialog appears.
 
 ![Event edit window](./screenshots/matter_cluster_tool_events_tab_dialog.png "Event edit window")
 
-|   UI element    |                                                 Description                                                  |
-| --------------- | ------------------------------------------------------------------------------------------------------------ |
-| **Code**        | A text input field for the event code. This field is required.                                               |
-| **Name**        | A text input field for the event name. This field is required.                                               |
-| **Side**        | A drop-down menu for selecting the source of the event, either `server` or `client`. This field is required. |
-| **Priority**    | A drop-down menu for selecting the event priority level: `debug`, `info`, or `critical`.                     |
-| **Optional**    | Toggle button to define the event as mandatory (toggle disabled) or optional (toggle enabled).               |
-| **Description** | A text input area for an optional event description.                                                         |
-| **Fields**      | Add a new field to the event.                                                                                |
+|   UI element    |                                                 Description                                                  | Required |
+| --------------- | ------------------------------------------------------------------------------------------------------------ | -------- |
+| **Code**        | A text input field for the event code.                                               | Yes      |
+| **Name**        | A text input field for the event name.                                               | Yes      |
+| **Side**        | A drop-down menu for selecting the source of the event, either `server` or `client`. | Yes      |
+| **Priority**    | A drop-down menu for selecting the event priority level: `debug`, `info`, or `critical`.                     | No       |
+| **Optional**    | Toggle button to define the event as mandatory (toggle disabled) or optional (toggle enabled).               | No       |
+| **Description** | A text input area for an optional event description.                                                         | No       |
+| **Fields**      | Add a new field to the event.                                                                                | No       |
 
 ##### Fields
 
@@ -255,12 +255,12 @@ When you click this button, the fields window appears, where you can click the *
 
 You can edit the following fields of the fields entry.
 
-|   UI element   |                                               Description                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------- |
-| **Id**        | A text input field for the numeric identifier of the field. The identifier must be unique within the event. This field is required.
-| **Name**      | A text input field for the field name. The name must be unique within the event. This field is required.                                         |
-| **Type**      | A combined text input and drop-down field for selecting the data type of the field. The data type list is populated from the Matter Data Model template. This field is required.                                         |
-| **Delete** (bin icon)   | Delete the field from the list.  |
+|   UI element   |                                               Description                                                | Required |
+| --------------- | -------------------------------------------------------------------------------------------------------- | -------- |
+| **Id**        | A text input field for the numeric identifier of the field. The identifier must be unique within the event. | Yes      |
+| **Name**      | A text input field for the field name. The name must be unique within the event.                                         | Yes      |
+| **Type**      | A combined text input and drop-down field for selecting the data type of the field. The data type list is populated from the Matter Data Model template.                                         | Yes      |
+| **Delete** (bin icon)   | Delete the field from the list.  | No       |
 
 ### Structures tab
 
@@ -282,12 +282,12 @@ When you click this button, the edit box dialog appears.
 
 ![Structures edit window](./screenshots/matter_cluster_tool_structures_tab_dialog.png "Structures edit window")
 
-|      UI element       |                                                Description                                                 |
-| --------------------- | ---------------------------------------------------------------------------------------------------------- |
-| **Name**              | A text input field for the structure name. This field is required.                                         |
-| **Is Fabric Scoped**  | Toggle button to indicate whether the structure is fabric-scoped (toggle enabled) or not (toggle disabld). |
-| **Items**             | Add a new item to the structure.                                                                           |
-| **Assigned clusters** | Add a new cluster assignment to the structure.                                                             |
+|      UI element       |                                                Description                                                 | Required |
+| --------------------- | ---------------------------------------------------------------------------------------------------------- | -------- |
+| **Name**              | A text input field for the structure name.                                         | Yes      |
+| **Is Fabric Scoped**  | Toggle button to indicate whether the structure is fabric-scoped (toggle enabled) or not (toggle disabld). | No       |
+| **Items**             | Add a new item to the structure.                                                                           | No       |
+| **Assigned clusters** | Add a new cluster assignment to the structure.                                                             | No       |
 
 ##### Items
 
@@ -298,18 +298,18 @@ When you click this button, the items window appears, where you can click the **
 
 You can edit the following fields of the items entry.
 
-|   UI element   |                                               Description                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------- |
-| **Field Id**        | A text input field for the numeric identifier of the item. The identifier must be unique within the structure. This field is required. |
-| **Name**      | A text input field for the item name. The name must be unique within the structure. This field is required.                                         |
-| **Type**      | A combined text input and drop-down field for selecting the data type of the item. The data type list is populated from the Matter Data Model template. This field is required.                                         |
-| **Length**   | Length of the item in bytes. Applies only to the `array` data type. Must be higher than **Min Length**.  |
-| **Min Length**   | Minimum allowed length of the item in bytes. Applies only to the `array` data type. |
-| **Min**   | The minimum allowed value of the item. Applies only to the numeric data types. The minimum value must be smaller than **Max** value and must fit in the numeric type bounds.  |
-| **Max**   | The maximum allowed value of the item. Applies only to the numeric data types. The maximum value must be greater than **Min** value and must fit in the numeric type bounds.  |
-| **Is Nullable** | Toggle button to define whether the item can be null (toggle enabled) or not (toggle disabled).     |
-| **Is Fabric Sensitive** | Toggle button to indicate whether the item is fabric-sensitive (toggle enabled) or not (toggle disabld).                                                     |
-| **Delete** (bin icon)   | Delete the item from the list.  |
+|   UI element   |                                               Description                                                | Required |
+| --------------- | -------------------------------------------------------------------------------------------------------- | -------- |
+| **Field Id**        | A text input field for the numeric identifier of the item. The identifier must be unique within the structure. | Yes      |
+| **Name**      | A text input field for the item name. The name must be unique within the structure.                                         | Yes      |
+| **Type**      | A combined text input and drop-down field for selecting the data type of the item. The data type list is populated from the Matter Data Model template.                                         | Yes      |
+| **Length**   | Length of the item in bytes. Applies only to the `array` data type. Must be higher than **Min Length**.  | No       |
+| **Min Length**   | Minimum allowed length of the item in bytes. Applies only to the `array` data type. | No       |
+| **Min**   | The minimum allowed value of the item. Applies only to the numeric data types. The minimum value must be smaller than **Max** value and must fit in the numeric type bounds.  | No       |
+| **Max**   | The maximum allowed value of the item. Applies only to the numeric data types. The maximum value must be greater than **Min** value and must fit in the numeric type bounds.  | No       |
+| **Is Nullable** | Toggle button to define whether the item can be null (toggle enabled) or not (toggle disabled).     | No       |
+| **Is Fabric Sensitive** | Toggle button to indicate whether the item is fabric-sensitive (toggle enabled) or not (toggle disabld).                                                     | No       |
+| **Delete** (bin icon)   | Delete the item from the list.  | No       |
 
 ##### Assigned clusters
 
@@ -320,10 +320,10 @@ When you click this button, the assigned clusters window appears, where you can 
 
 You can edit the following fields of the assigned clusters entry.
 
-|   UI element   |                                               Description                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------- |
-| **Code**      | A text input field for the code of the cluster that the struct is associated with. Must be empty if structure is global and not applicable to a specific cluster. This field is required.                                         |
-| **Delete** (bin icon)   | Delete the cluster assignment from the list.  |
+|   UI element   |                                               Description                                                | Required |
+| --------------- | -------------------------------------------------------------------------------------------------------- | -------- |
+| **Code**      | A text input field for the code of the cluster that the struct is associated with. Must be empty if structure is global and not applicable to a specific cluster.                                         | Yes      |
+| **Delete** (bin icon)   | Delete the cluster assignment from the list.  | No       |
 
 ### Enums tab
 
@@ -333,13 +333,13 @@ This tab contains all enumeration types used by the cluster.
 
 You can add new enumerations using the **Add Enum** button.
 
-|           UI element           |                              Description                              |
-| ------------------------------ | --------------------------------------------------------------------- |
-| **Name**                       | A text input fiel for the name of the enumeration. Must be unique within the cluster. This field is required.                                                     |
-| **Type**                       | A combined text input and drop-down field for selecting the data type of the enumeration. This field is required.                                    |
-| **Details**                    | List of complete enumeration settings.<br/><br/>This list is initially hidden. Click the expand chevron to see the list.<br/>![Details chevron](./screenshots/matter_cluster_tool_details_button.png "Details chevron")                                    |
-| **Action: Edit** (pencil icon) | Edit the enumeration. This opens the edit window that is described below. |
-| **Action: Delete** (bin icon)  | Delete the enumeration from the list.                                 |
+|           UI element           |                              Description                              | Required |
+| ------------------------------ | --------------------------------------------------------------------- | -------- |
+| **Name**                       | A text input fiel for the name of the enumeration. Must be unique within the cluster.                                                     | Yes      |
+| **Type**                       | A combined text input and drop-down field for selecting the data type of the enumeration.                                    | Yes      |
+| **Details**                    | List of complete enumeration settings.<br/><br/>This list is initially hidden. Click the expand chevron to see the list.<br/>![Details chevron](./screenshots/matter_cluster_tool_details_button.png "Details chevron")                                    | No       |
+| **Action: Edit** (pencil icon) | Edit the enumeration. This opens the edit window that is described below. | No       |
+| **Action: Delete** (bin icon)  | Delete the enumeration from the list.                                 | No       |
 
 #### Add Enum
 
@@ -347,12 +347,12 @@ When you click the **Add Enum** button, the edit box dialog appears.
 
 ![Enum edit window](./screenshots/matter_cluster_tool_enums_tab_dialog.png "Enum edit window")
 
-|   UI element   |                                               Description                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------- |
-| **Name**      | A text input field for the enum name. The name must be unique within the cluster. This field is required.                                         |
-| **Type**      | A combined text input and drop-down field for selecting the data type of the enum. The data type list is populated from the Matter Data Model template. This field is required.                                         |
-| **Items**      | Add a new item to the enumeration.                                                                       |
-| **Assigned clusters** | Add a new cluster assignment to the enumeration.                                               |
+|   UI element   |                                               Description                                                | Required |
+| --------------- | -------------------------------------------------------------------------------------------------------- | -------- |
+| **Name**      | A text input field for the enum name. The name must be unique within the cluster.                                         | Yes      |
+| **Type**      | A combined text input and drop-down field for selecting the data type of the enum. The data type list is populated from the Matter Data Model template.                                         | Yes      |
+| **Items**      | Add a new item to the enumeration.                                                                       | No       |
+| **Assigned clusters** | Add a new cluster assignment to the enumeration.                                               | No       |
 
 ##### Items
 
@@ -362,11 +362,11 @@ When you click the **Items** button, the items window appears, where you can cli
 
 You can edit the following fields of the items entry.
 
-|   UI element   |                                               Description                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------- |
-| **Name**      | A text input field for the item name. The name must be unique within the enum. This field is required.                                         |
-| **Value**      | A text input field for the value assigned to the item. Must match the specified data type of the enumerated type. This field is required.                                         |
-| **Delete** (bin icon)   | Delete the item from the list.  |
+|   UI element   |                                               Description                                                | Required |
+| --------------- | -------------------------------------------------------------------------------------------------------- | -------- |
+| **Name**      | A text input field for the item name. The name must be unique within the enum.                                         | Yes      |
+| **Value**      | A text input field for the value assigned to the item. Must match the specified data type of the enumerated type.                                         | Yes      |
+| **Delete** (bin icon)   | Delete the item from the list.  | No       |
 
 ##### Assigned clusters
 
@@ -376,10 +376,10 @@ When you click the **Assigned clusters** button, the assigned clusters window ap
 
 You can edit the following fields of the assigned clusters entry.
 
-|   UI element   |                                               Description                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------- |
-| **Code**      | A text input field for the code of the cluster that the enum is associated with. Must be empty if structure is global and not applicable to a specific enum. This field is required.                                         |
-| **Delete** (bin icon)   | Delete the cluster assignment from the list.  |
+|   UI element   |                                               Description                                                | Required |
+| --------------- | -------------------------------------------------------------------------------------------------------- | -------- |
+| **Code**      | A text input field for the code of the cluster that the enum is associated with. Must be empty if structure is global and not applicable to a specific enum.                                         | Yes      |
+| **Delete** (bin icon)   | Delete the cluster assignment from the list.  | No       |
 
 ### Device type tab
 
@@ -393,17 +393,17 @@ This tab contains fields for device type configuration and its cluster assignmen
 
 You can edit the following fields of the device type configuration.
 
-|   UI element   |                                               Description                                                |
-| -------------- | -------------------------------------------------------------------------------------------------------- |
-| **Name**        | A text input field for the unique identifier for the device type, formatted with dashes instead of spaces. This field is required. |
-| **Domain**      | A combined text input and drop-down field for selecting from predefined domains. The domain categorizes the device type within a specific area of application, for example lighting, appliances, and so on. This field is required. |
-| **Type Name**   | A text input field for a human-readable name that describes the device type. This field is required. |
-| **Class**       | A drop-down input field for selecting the device class. If your device is a Utility, select `Utility`. If your device is an Application, select `Simple` or `Dynamic`. This field is required. |
-| **Scope**       | A drop-down input field for selecting the device scope. Choose `Node` if the device is a Utility type scoped to a node. Choose `Endpoint` if the device represents the physical device or product. This field is required. |
-| **Profile ID**  | A text input field for the profile ID with an editable flag. The profile ID reflects the current version of the Matter specification where the least significant byte is the major version and the most significant byte is the minor version. For example, the profile ID for Matter 1.4 is `0x0104`. This field is required. |
-| **Device ID**   | A text input field for the device ID with an editable flag. A unique identifier for the device, essential for device recognition. A custom device ID must be unique and consist of the manufacturer code and device ID. This field is required. |
-| **Lock Others** | A toggle button to lock the device to only use the defined clusters. If enabled, the device does not use other clusters than the ones defined below. This is useful to prevent the device from using other clusters that are not assigned to the device type. |
-| **Editable**    | A toggle button to define whether the device type can later be edited in ZAP tool. If enabled, the device type can be edited. |
+|   UI element   |                                               Description                                                | Required |
+| -------------- | -------------------------------------------------------------------------------------------------------- | -------- |
+| **Name**        | A text input field for the unique identifier for the device type, formatted with dashes instead of spaces. | Yes      |
+| **Domain**      | A combined text input and drop-down field for selecting from predefined domains. The domain categorizes the device type within a specific area of application, for example lighting, appliances, and so on. | Yes      |
+| **Type Name**   | A text input field for a human-readable name that describes the device type. | Yes      |
+| **Class**       | A drop-down input field for selecting the device class. If your device is a Utility, select `Utility`. If your device is an Application, select `Simple` or `Dynamic`. | Yes      |
+| **Scope**       | A drop-down input field for selecting the device scope. Choose `Node` if the device is a Utility type scoped to a node. Choose `Endpoint` if the device represents the physical device or product. | Yes      |
+| **Profile ID**  | A text input field for the profile ID with an editable flag. The profile ID reflects the current version of the Matter specification where the least significant byte is the major version and the most significant byte is the minor version. For example, the profile ID for Matter 1.4 is `0x0104`. | Yes      |
+| **Device ID**   | A text input field for the device ID with an editable flag. A unique identifier for the device, essential for device recognition. A custom device ID must be unique and consist of the manufacturer code and device ID. | Yes      |
+| **Lock Others** | A toggle button to lock the device to only use the defined clusters. If enabled, the device does not use other clusters than the ones defined below. This is useful to prevent the device from using other clusters that are not assigned to the device type. | No       |
+| **Editable**    | A toggle button to define whether the device type can later be edited in ZAP tool. If enabled, the device type can be edited. | No       |
 
 
 #### Device type cluster assignments
@@ -433,17 +433,17 @@ The following window opens when you click the **Add Cluster assignment to device
 
 You can edit the following fields when adding a cluster assignment to device type.
 
-|   UI element   |                                               Description                                                |
-| -------------- | -------------------------------------------------------------------------------------------------------- |
-| **Cluster**      | A drop-down input field for selecting the cluster to be assigned to the device type. This field is required. |
-| **Client**       | A toggle button to define whether the cluster uses the client role for attributes, commands, and events. If enabled, the cluster can be used as a client. This field is required. |
-| **Server**       | A toggle button to define whether the cluster uses the server role for attributes, commands, and events. If enabled, the cluster can be used as a server. This field is required. |
-| **Client Locked** | A toggle button to define whether the cluster should prevent using other attributes, commands, and events in client role than the ones assigned to the cluster. If enabled, the cluster can only use the attributes, commands, and events assigned to it.  |
-| **Server Locked** | A toggle button to define whether the cluster should prevent using other attributes, commands, and events in server role than the ones assigned to the cluster. If enabled, the cluster can only use the attributes, commands, and events assigned to it. |
-| **Required Attributes** | Add a new required attribute assignment to the device type. |
-| **Required Commands** | Add a new required command assignment to the device type. |
-| **Required Events** | Add a new required event assignment to the device type. |
-| **Features** | Add a new feature assignment to the device type. |
+|   UI element   |                                               Description                                                | Required |
+| -------------- | -------------------------------------------------------------------------------------------------------- | -------- |
+| **Cluster**      | A drop-down input field for selecting the cluster to be assigned to the device type. | Yes      |
+| **Client**       | A toggle button to define whether the cluster uses the client role for attributes, commands, and events. If enabled, the cluster can be used as a client. | Yes      |
+| **Server**       | A toggle button to define whether the cluster uses the server role for attributes, commands, and events. If enabled, the cluster can be used as a server. | Yes      |
+| **Client Locked** | A toggle button to define whether the cluster should prevent using other attributes, commands, and events in client role than the ones assigned to the cluster. If enabled, the cluster can only use the attributes, commands, and events assigned to it.  | No       |
+| **Server Locked** | A toggle button to define whether the cluster should prevent using other attributes, commands, and events in server role than the ones assigned to the cluster. If enabled, the cluster can only use the attributes, commands, and events assigned to it. | No       |
+| **Required Attributes** | Add a new required attribute assignment to the device type. | No       |
+| **Required Commands** | Add a new required command assignment to the device type. | No       |
+| **Required Events** | Add a new required event assignment to the device type. | No       |
+| **Features** | Add a new feature assignment to the device type. | No       |
 
 ###### Required Attributes
 
@@ -496,11 +496,11 @@ When you click this button, the features window appears, where you can click the
 
 You can edit the following fields of the feature entry.
 
-|      UI element       |                                       Description                                       |
-| --------------------- | --------------------------------------------------------------------------------------- |
-| **Code**              | A text input field for the code name of the feature. For example, `DL` for Door Lock. If no code name is available, use `00`. The code name must match the Matter Data Model or your custom cluster. This field is required.     |
-| **Name**              | A text input field for the name of the feature. This field is required.                 |
-| **Delete** (bin icon) | Delete the event from the list.                                                         |
+|      UI element       |                                       Description                                       | Required |
+| --------------------- | --------------------------------------------------------------------------------------- | -------- |
+| **Code**              | A text input field for the code name of the feature. For example, `DL` for Door Lock. If no code name is available, use `00`. The code name must match the Matter Data Model or your custom cluster.     | Yes      |
+| **Name**              | A text input field for the name of the feature.                 | Yes      |
+| **Delete** (bin icon) | Delete the event from the list.                                                         | No       |
 
 ## About tab
 

@@ -4,10 +4,8 @@ This guide describes how to create a new device type and save it as an XML file 
 
 A device type defines the clusters, attributes, commands, and events that a specific type of Matter device supports. Creating a new device type allows you to define custom device functionality that isn't covered by the standard Matter Device Type Library specification.
 
-!!! note "Note"
-    {{matter_requirements}}
-
-Before creating a new device type, ensure you have a clear understanding of the device's intended functionality, knowledge of which clusters, attributes, commands, and events the device needs, and familiarity with Matter device type concepts and requirements.
+{{matter_requirements}}
+Make also sure that you have a clear understanding of the device's intended functionality, knowledge of which clusters, attributes, commands, and events the device needs, and familiarity with Matter device type requirements.
 
 !!! info "Tip"
     - When adding required attributes, commands, or events, ensure that the names you enter exactly match the names defined in the corresponding cluster. The tool will validate these references during the save process.
